@@ -18,6 +18,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+import swaggerUi from 'swagger-ui-express';
+import fs from 'fs';
+import yaml from 'js-yaml';
+
+const swaggerDocument = yaml.load(fs.readFileSync('swagger.yaml', 'utf8'));
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use("/headers", headerRouter);
 app.use("/services", serviceRouter);

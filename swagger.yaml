@@ -1,0 +1,705 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "API Documentation"
+  description: "This is a sample server for a landing page."
+host: "landing-public-oile.onrender.com"
+basePath: "/"
+schemes:
+  - "https"
+produces:
+  - "application/json"
+paths:
+  /headers:
+    get:
+      summary: "Get all headers"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get a header by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new header"
+      parameters:
+        - name: "header"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Header"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update a header by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "header"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Header"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete a header by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+  /services:
+    get:
+      summary: "Get all services"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get a service by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new service"
+      parameters:
+        - name: "service"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Service"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update a service by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "service"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Service"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete a service by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+  /content-services:
+    get:
+      summary: "Get all content services"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get a content service by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new content service"
+      parameters:
+        - name: "content-service"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/ContentService"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update a content service by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "content-service"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/ContentService"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete a content service by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+  /about-us:
+    get:
+      summary: "Get all about us"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get an about us by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new about us"
+      parameters:
+        - name: "about-us"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/AboutUs"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update an about us by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "about-us"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/AboutUs"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete an about us by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+  /about-us_number:
+    get:
+      summary: "Get all about us numbers"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get an about us number by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new about us number"
+      parameters:
+        - name: "about-us-number"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/AboutUsNumber"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update an about us number by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "about-us-number"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/AboutUsNumber"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete an about us number by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+  /all-services:
+    get:
+      summary: "Get all services"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get a service by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new service"
+      parameters:
+        - name: "service"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Service"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update a service by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "service"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Service"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete a service by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+  /cards:
+    get:
+      summary: "Get all cards"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get a card by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new card"
+      parameters:
+        - name: "card"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Card"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update a card by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "card"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Card"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete a card by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+  /all-projects:
+    get:
+      summary: "Get all projects"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get a project by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new project"
+      parameters:
+        - name: "project"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Project"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update a project by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "project"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Project"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete a project by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+  /projects:
+    get:
+      summary: "Get all projects"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get a project by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new project"
+      parameters:
+        - name: "project"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Project"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update a project by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "project"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Project"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete a project by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+  /videos:
+    get:
+      summary: "Get all videos"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get a video by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new video"
+      parameters:
+        - name: "video"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Video"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update a video by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "video"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Video"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete a video by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+  /users:
+    get:
+      summary: "Get all users"
+      responses:
+        200:
+          description: "OK"
+    /{id}:
+      get:
+        summary: "Get a user by ID"
+        parameters:
+          - name: "id"
+            in: "path"
+            required: true
+            type: "string"
+        responses:
+          200:
+            description: "OK"
+    post:
+      summary: "Create a new user"
+      parameters:
+        - name: "user"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/User"
+      responses:
+        201:
+          description: "Created"
+    put:
+      summary: "Update a user by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "user"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/User"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "Delete a user by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "No Content"
+definitions:
+  Header:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      description:
+        type: "string"
+      imageLink:
+        type: "string"
+  Service:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      description:
+        type: "string"
+      content_ref_id:
+        type: "string"
+  ContentService:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      description:
+        type: "string"
+      imageLink:
+        type: "string"
+  AboutUs:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      description:
+        type: "string"
+      hyperlink:
+        type: "string"
+      imageLink:
+        type: "string"
+  AboutUsNumber:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      imageLink:
+        type: "string"
+      numbers:
+        type: "array"
+        items:
+          type: "string"
+  AllService:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      card_ref_id:
+        type: "string"
+  Card:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      description:
+        type: "string"
+      imageLink:
+        type: "string"
+      link:
+        type: "string"
+  AllProject:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      description:
+        type: "string"
+      project_ref_id:
+        type: "string"
+  Projects:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      description:
+        type: "string"
+      project_ref_id:
+        type: "string"
+  Video:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      description:
+        type: "string"
+      video:
+        type: "string"
+      imageLink:
+        type: "string"
+  User:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      phone_number:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+      imageLink:
+        type: "string"
